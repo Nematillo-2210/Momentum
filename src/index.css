@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Momentum Token System
+  Custom tokens (--bg, --surface, etc.) are set at runtime by useTheme.jsx.
+  The :root block below provides static fallback defaults (Linear Midnight)
+  AND pre-maps the Shadcn structural vars so Tooltips, Select dropdowns,
+  Dialogs, Inputs, and Cards all inherit the correct theme colors on
+  every render — including the very first paint.
+*/
+
+@layer base {
+  :root {
+    /* ── Custom tokens: Linear Midnight defaults ── */
+    --bg:        #0C0D0F;
+    --surface:   #141518;
+    --surface2:  #1E1F24;
+    --border:    #2C2D33;
+    --text:      #F3F4F6;
+    --muted:     #8B8D98;
+    --accent:    #5E6AD2;
+    --danger:    #E11D48;
+    --radius:    14px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.32);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.34);
+    --transition: 180ms ease;
+
+    /* ── Shadcn structural bridge ──
+       Static hex values matching the defaults above.
+       useTheme.jsx overrides these at runtime for every theme switch.
+       Using direct hex (not var()) prevents circular-reference flicker. */
+    --background:          #0C0D0F;
+    --foreground:          #F3F4F6;
+    --card:                #141518;
+    --card-foreground:     #F3F4F6;
+    --popover:             #141518;
+    --popover-foreground:  #F3F4F6;
+    --primary:             #5E6AD2;
+    --primary-foreground:  #F3F4F6;
+    --secondary:           #1E1F24;
+    --secondary-foreground:#F3F4F6;
+    --muted-foreground:    #8B8D98;
+    --accent-foreground:   #F3F4F6;
+    --destructive:         #E11D48;
+    --destructive-foreground: #F3F4F6;
+    --input:               #2C2D33;
+    --ring:                #5E6AD2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button, a, [role="button"] {
+    touch-action: manipulation;
+  }
+}
