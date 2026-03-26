@@ -31,5 +31,5 @@
 ---
 
 ### 👤 About the Developer
-**Momentum** was handcrafted by **@abduxalikov_n**. 
+**Momentum** was created by **@abduxalikov_n**. 
 Feel free to reach out via [Telegram](https://t.me/abduxalikov_n) for feedback or collaboration.
